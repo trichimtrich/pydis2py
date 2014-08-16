@@ -1,0 +1,12 @@
+  2           0 LOAD_CONST               1 ('Hi')
+              3 PRINT_ITEM          
+              4 LOAD_FAST                0 (name)
+              7 PRINT_ITEM          
+              8 PRINT_NEWLINE       
+
+  3           9 LOAD_CONST               2 ("I'm chim. Welcome to github!")
+             12 PRINT_ITEM          
+             13 PRINT_NEWLINE       
+
+  4          14 LOAD_CONST               3 (0)
+             17 RETURN_VALUE        
