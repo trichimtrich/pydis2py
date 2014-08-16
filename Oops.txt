@@ -1,0 +1,83 @@
+#Opcode Table
+#Ver: 1.0
+#Author + Format: Chim
+#Date: 08/05/2014
+#THIS IS IMPORTANT, please do not change name or contents of this file. In that case, I'm not sure if it did not workout!
+
+#Type:
+#	0: write to stack
+#	1: write to python script
+#	2: not informal
+
+#Type||OpCode||OpPri||Format1||Format2
+
+# Load to stack
+0||LOAD_FAST||99||v%d||%e
+0||LOAD_CONST||99||c%d||%e
+0||LOAD_GLOBAL||99||g%d||%e
+0||LOAD_ATTR||80||%s.a%d||%s.%e
+
+# Calculate and store to stack
+
+0||COMPARE_OP||98||%s(cmp%d)%s||%s%e%s
+
+0||BINARY_LSHIFT||97||%s<<%s
+0||BINARY_RSHIFT||97||%s>>%s
+0||INPLACE_LSHIFT||97||%s<<%s
+0||INPLACE_RSHIFT||97||%s>>%s
+
+0||BINARY_ADD||96||%s+%s
+0||BINARY_SUBTRACT||96||%s-%s
+0||INPLACE_ADD||96||%s+%s
+0||INPLACE_SUBTRACT||96||%s-%s
+
+0||BINARY_MULTIPLY||95||%s*%s
+0||BINARY_DIVIDE||95||%s/%s
+0||BINARY_FLOOR_DIVIDE||95||%s//%s
+0||BINARY_MODULO||95||%s%%s
+0||INPLACE_MULTIPLY||95||%s*%s
+0||INPLACE_DIVIDE||95||%s/%s
+0||INPLACE_FLOOR_DIVIDE||95||%s//%s
+0||INPLACE_MODULO||95||%s%%s
+
+0||UNARY_POSITIVE||94||+%s
+0||UNARY_INVERT||94||~%s
+0||UNARY_NEGATIVE||94||-%s
+
+0||BINARY_POWER||93||%s**%s
+0||INPLACE_POWER||93||%s**%s
+
+0||BINARY_AND||92||%s&%s
+0||BINARY_OR||92||%s|%s
+0||BINARY_XOR||92||%s^%s
+0||INPLACE_AND||92||%s&%s
+0||INPLACE_OR||92||%s|%s
+0||INPLACE_XOR||92||%s^%s
+
+0||BINARY_SUBSCR||90||%s[%s]
+
+
+# Write to script
+1||STORE_FAST||99||v%d=%s||%e=%s
+1||RETURN_VALUE||99||return %s
+
+
+# Informal opcode
+2||PRINT_NEWLINE||99
+2||PRINT_ITEM||99
+
+2||BUILD_LIST||99
+2||BUILD_TUPLE||99
+2||CALL_FUNCTION||99
+
+2||POP_TOP||99
+2||POP_BLOCK||99
+2||POP_JUMP_IF_FALSE||99
+
+2||JUMP_FORWARD||99
+2||JUMP_ABSOLUTE||99
+
+2||SETUP_LOOP||99
+2||GET_ITER||99
+2||FOR_ITER||99
+2||BREAK_LOOP||99
